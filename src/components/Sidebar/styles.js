@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 200px;
+  height: 100%;
   background: #fff;
   border-radius: 4px;
   border: 1px solid #ddd;
@@ -15,5 +16,11 @@ export const Container = styled.div`
     line-height: 24px;
     font-weight: bold;
     margin: 10px 10px;
+    cursor: pointer;
+  }
+
+  p:hover {
+    color: #333;
+    opacity: 0.4;
   }
 `;

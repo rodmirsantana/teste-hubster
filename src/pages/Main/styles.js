@@ -3,7 +3,6 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
 `;
 
 export const ProductList = styled.ul`
@@ -11,7 +10,7 @@ export const ProductList = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   list-style: none;
-  max-width: 700px;
+  margin: 0 12px;
 
   li {
     display: flex;
