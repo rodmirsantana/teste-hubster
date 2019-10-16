@@ -1,45 +1,37 @@
 import produce from 'immer';
 import { addToCartSuccess, updateAmountSuccess } from '../actions/cart';
-import { formatPrice } from './../../utils/format';
 
 const INITIAL_STATE = {
-  cart: [],
-  amount: [
-    {
-      id: '',
-      count: 0
-    }
-  ]
+  cart: []
 };
 
 export default function cart(state = INITIAL_STATE, action) {
   switch (action.type) {
     case '@cart/ADD_REQUEST':
+      console.log(state);
       const findProduct = state => state.cart.find(p => p.id === action.product.id);
       const productExists = findProduct(state);
-      console.log(state);
       const currentAmount = productExists ? productExists.amount : 0;
-
       const amount = currentAmount + 1;
       if (productExists) {
-        updateAmountSuccess(action.product.id, amount);
+        updateAmountSuccess(action.product.id, action.product.amount);
       } else {
+        action.product.amount = 1;
+        state.cart.push(action.product);
+        // state.push({ id: action.product.id, count: 1 });
         const data = {
-          ...state,
-          amount: 1,
-          priceFormatted: formatPrice(action.product.salePrice)
+          ...state
         };
+        console.log('reducer', data);
         addToCartSuccess(data);
       }
 
       return { ...state };
 
     case '@cart/ADD_SUCCESS':
-      return produce(state, draft => {
-        const { product } = action;
+      const { product } = action;
+      return state.cart.cart.push(product);
 
-        draft.push(product);
-      });
     case '@cart/REMOVE':
       return produce(state, draft => {
         const productIndex = draft.findIndex(p => p.id === action.id);
