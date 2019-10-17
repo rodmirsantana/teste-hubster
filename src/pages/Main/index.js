@@ -71,7 +71,6 @@ class Main extends Component {
                   <button type="button" onClick={() => this.handleAddProduct(product)}>
                     <div>
                       <MdAddShoppingCart size={16} color="#333" />
-                      {/* {console.log(amount)} */}
                       {amount[product.id] || 0}
                     </div>
                     <span>ADICIONAR AO CARRINHO</span>
@@ -87,19 +86,10 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-  amount: state.cart.reduce((amount, product) => {
-    console.log('mapstate', state);
+  amount: state.cart.cart.reduce((amount, product) => {
     amount[product.id] = product.amount;
-    console.log(amount);
     return amount;
   }, {})
-  // amount: state.cart
-  // amount: state.cart.reduce((amount, product, index, original) => {
-  //   console.log('mapstate', state);
-  //   amount[product.id] = original.find(p => p.id === product.id).count;
-  //   console.log(amount[product.id]);
-  //   return amount;
-  // }, {})
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(CartActions, dispatch);

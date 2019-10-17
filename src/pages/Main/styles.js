@@ -10,7 +10,7 @@ export const ProductList = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   list-style: none;
-  margin: 0 12px;
+  margin: 0 8px;
 
   li {
     display: flex;

@@ -1,14 +1,11 @@
 import React from 'react';
 
-import { Container, Search } from './styles';
+import { Container } from './styles';
 
 export default function Header() {
   return (
     <Container>
-      <h1>Ponto de venda Hubster</h1>
-      <Search>
-        <input type="search" />
-      </Search>
+      <h1>Ponto de Venda Hubster</h1>
     </Container>
   );
 }

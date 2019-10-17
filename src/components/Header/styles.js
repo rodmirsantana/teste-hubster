@@ -12,5 +12,3 @@ export const Container = styled.div`
     margin: 20px 20px;
   }
 `;
-
-export const Search = styled.div``;

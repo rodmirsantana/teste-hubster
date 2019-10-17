@@ -27,14 +27,15 @@ export const Container = styled.div`
 `;
 
 export const ProductTable = styled.table`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border-radius: 4px;
   border: 1px solid #ddd;
   padding: 10px;
 
   thead tr {
-    text-align: left;
+    text-align: center;
   }
 
   thead th {
@@ -45,6 +46,7 @@ export const ProductTable = styled.table`
   tbody td {
     font-size: 16px;
     padding: 8px;
+    margin-bottom: 10px;
     border-bottom: 1px solid #eee;
   }
 
@@ -55,6 +57,7 @@ export const ProductTable = styled.table`
   strong {
     color: #333;
     display: block;
+    max-width: 80px;
   }
 
   span {
@@ -87,20 +90,43 @@ export const ProductTable = styled.table`
 export const Summary = styled.div`
   display: flex;
   flex-direction: column;
-
   div {
     display: flex;
-    justify-content: space-between;
   }
 
   div span {
-    color: #999;
+    color: #808080;
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 5px;
   }
 
   div strong {
     font-size: 14px;
-    margin-right: 10px;
+    margin-left: 20px;
+  }
+
+  input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 20px;
+    color: #333;
+    font-weight: bold;
+    padding: 2px;
+    width: 50px;
+  }
+
+  .total {
+    margin-top: 10px;
+    span {
+      color: #808080;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    strong {
+      font-size: 18px;
+      margin-left: 20px;
+    }
   }
 `;
